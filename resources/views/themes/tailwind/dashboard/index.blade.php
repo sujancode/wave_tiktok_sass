@@ -13,6 +13,10 @@
 			</div>
 		</div>
 	</div>
+	<a id="download-video" href="#" style="display: none">
+		Click To Download Video
+	</a>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 	<script>
 
@@ -29,6 +33,7 @@
 		// 		window.URL.revokeObjectURL(url);
 		// 	};
 		// }());
+
 
 		var link="http://3.86.86.193:8000/reddit/get-video/"
 
@@ -56,10 +61,14 @@
 				filename=response["data"]["path"].replaceAll(" ","+")
 				var video_path=`https://redditvideobucket.s3.amazonaws.com/${filename}`
 				// saveData(response.data,"mp4","video.mp4")
-				window.open(video_path,"_blank")
+				var download_element=document.getElementById("download-video")
+				download_element.style.display="block"
+				download_element.href=video_path
+
 			}).catch(err=>{
 				console.log("Error Has Occured")
 				console.log(err)
+				alert("Error Has Occured Could Not Generate Vidoe from this link")
 			});
 		}
 	</script>
