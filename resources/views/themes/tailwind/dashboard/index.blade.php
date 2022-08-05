@@ -35,7 +35,7 @@
 		// }());
 
 
-		var link="http://3.86.86.193:8000/reddit/get-video/"
+		var link="http://18.234.204.23:8000/reddit/get-video/"
 
 		var generate_btn=document.getElementById("generate_video")
 		
